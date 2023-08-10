@@ -1,11 +1,8 @@
 package com.dialexa.lombokloggingdebugging.lombokloggingdebugging.services;
 
-import com.dialexa.lombokloggingdebugging.lombokloggingdebugging.controllers.CalculatorController;
 import com.dialexa.lombokloggingdebugging.lombokloggingdebugging.models.Numbers;
 import com.dialexa.lombokloggingdebugging.lombokloggingdebugging.models.NumbersLombok;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
