@@ -15,15 +15,21 @@ configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
+	all {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+		exclude group: "commons-logging", module: "commons-logging"
+	}
 }
 
 repositories {
 	mavenCentral()
-	maven { url 'https://jitpack.io' } // For Seq
+	maven { url 'https://splunk.jfrog.io/splunk/ext-releases-local' } // For Splunk
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+	runtimeOnly 'com.splunk.logging:splunk-library-javalogging:1.8.0'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

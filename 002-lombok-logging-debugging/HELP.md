@@ -24,3 +24,4 @@ The following guides illustrate how to use some features concretely:
 These additional references should also help you:
 
 * [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+* [Step by step guide for setting up Splunk integration](https://www.youtube.com/watch?v=VO20SgiTTOU)
