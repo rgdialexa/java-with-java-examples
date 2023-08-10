@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"a\": 10,\n    \"b\": 5\n}",
+					"raw": "{\n    \"a\": 10,\n    \"b\": 3\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"a\": 10,\n    \"b\": 5\n}",
+					"raw": "{\n    \"a\": 10,\n    \"b\": 4\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -50,7 +50,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/v1/calculator/divideints",
+					"raw": "localhost:8080/api/v1/calculator/divideintslombok",
 					"host": [
 						"localhost"
 					],
@@ -59,7 +59,7 @@
 						"api",
 						"v1",
 						"calculator",
-						"divideints"
+						"divideintslombok"
 					]
 				}
 			},
@@ -69,7 +69,19 @@
 			"name": "Calculator Welcome",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/calculator",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"calculator"
+					]
+				}
 			},
 			"response": []
 		}
