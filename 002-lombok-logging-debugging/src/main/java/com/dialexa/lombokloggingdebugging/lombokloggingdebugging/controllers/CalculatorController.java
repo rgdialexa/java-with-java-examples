@@ -28,19 +28,21 @@ public class CalculatorController {
             result = calculatorService.divideIntNumbers(numbers);
         } catch (Exception ex) {
            log.error(String.format("An error occurred: %s", ex));
+           throw ex;
         }
 
         return result;
     }
 
     @PostMapping("/divideintslombok")
-    public int divideInt(@RequestBody NumbersLombok numbersLombok) {
-        log.info(String.format("Received request to divide %s by %s using lombok.", numbersLombok.getA(), numbersLombok.getB()));
+    public int divideIntLombok(@RequestBody NumbersLombok numbersLombok) {
+        log.info(String.format("Received request to divide %s by %s using lombok. %s", numbersLombok.getA(), numbersLombok.getB()));
         int result = 0;
         try {
             result = calculatorService.divideIntNumbersLombok(numbersLombok);
         } catch (Exception ex) {
             log.error(String.format("An error occurred: %s", ex));
+            throw ex;
         }
 
         return result;
