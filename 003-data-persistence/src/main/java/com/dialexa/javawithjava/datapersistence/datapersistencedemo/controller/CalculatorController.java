@@ -17,21 +17,48 @@ public class CalculatorController {
     @Autowired
     private CalculatorService calculatorService;
 
-    @GetMapping()
-    public List<CalculationDTO> calculator() {
+    @GetMapping("/results")
+    public List<CalculationDTO> allCalculations() {
         log.info("Gathering all calculations");
         return calculatorService.getAllCalculations();
     }
 
+    @GetMapping("/results/positive")
+    public List<CalculationDTO> positiveCalculations() {
+        log.info("Gathering all calculations with positive results");
+        return calculatorService.getPositiveCalculations();
+    }
+
+    @GetMapping("/results/negative")
+    public List<CalculationDTO> negativeCalculations() {
+        log.info("Gathering all calculations with negative results");
+        return calculatorService.getNegativeCalculations();
+    }
+
+    @GetMapping("/results/division")
+    public List<CalculationDTO> allDivisionCalculations() {
+        log.info("Gathering all calculations using division");
+        return calculatorService.getAllDivisionCalculations();
+    }
+
+    @GetMapping("/results/addition")
+    public List<CalculationDTO> allAdditionCalculations() {
+        log.info("Gathering all calculations using addition");
+        return calculatorService.getAllAdditionCalculations();
+    }
+
     @PostMapping("/divideints")
-    public CalculationDTO divideInt(@RequestBody NumbersDTO numbers) {
+    public CalculationDTO divideInts(@RequestBody NumbersDTO numbers) {
         log.info(String.format("Received request to divide %s by %s", numbers.getA(), numbers.getB()));
-        try {
-            return calculatorService.divideIntNumbers(numbers);
-        } catch (Exception ex) {
-           log.error(String.format("An error occurred: %s", ex));
-           throw ex;
-        }
+        return calculatorService.divideIntNumbers(numbers);
+
+    }
+
+    @PostMapping("/addints")
+    public CalculationDTO addInts(@RequestBody NumbersDTO numbers) {
+        log.info(String.format("Received request to add %s to %s", numbers.getA(), numbers.getB()));
+        return calculatorService.addIntNumbers(numbers);
+
     }
 
 }
