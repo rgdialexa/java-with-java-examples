@@ -1,6 +1,6 @@
 package com.dialexa.javawithjava.datapersistence.datapersistencedemo.controller;
 
-import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.dto.CalculationResponseDTO;
+import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.dto.CalculationDTO;
 import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.dto.NumbersDTO;
 import com.dialexa.javawithjava.datapersistence.datapersistencedemo.service.CalculatorService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,13 +18,13 @@ public class CalculatorController {
     private CalculatorService calculatorService;
 
     @GetMapping()
-    public List<CalculationResponseDTO> calculator() {
+    public List<CalculationDTO> calculator() {
         log.info("Gathering all calculations");
         return calculatorService.getAllCalculations();
     }
 
     @PostMapping("/divideints")
-    public CalculationResponseDTO divideInt(@RequestBody NumbersDTO numbers) {
+    public CalculationDTO divideInt(@RequestBody NumbersDTO numbers) {
         log.info(String.format("Received request to divide %s by %s", numbers.getA(), numbers.getB()));
         try {
             return calculatorService.divideIntNumbers(numbers);
