@@ -1,6 +1,6 @@
 package com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.entity;
 
-import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.dto.CalculationResponseDTO;
+import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.dto.CalculationDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -28,9 +28,9 @@ public class Calculation {
     private String operation;
     private String notes;
 
-    public CalculationResponseDTO toDTO()
+    public CalculationDTO toDTO()
     {
-        return CalculationResponseDTO.builder()
+        return CalculationDTO.builder()
                 .id(this.id)
                 .firstNumber(this.firstNumber)
                 .secondNumber(this.secondNumber)

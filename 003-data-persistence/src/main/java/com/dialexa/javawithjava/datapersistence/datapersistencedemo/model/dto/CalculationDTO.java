@@ -9,7 +9,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Data
 @Builder
-public class CalculationResponseDTO {
+public class CalculationDTO {
     private UUID id;
     private int firstNumber;
     private int secondNumber;

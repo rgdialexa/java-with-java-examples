@@ -1,6 +1,6 @@
 package com.dialexa.javawithjava.datapersistence.datapersistencedemo.service;
 
-import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.dto.CalculationResponseDTO;
+import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.dto.CalculationDTO;
 import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.dto.NumbersDTO;
 import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.entity.Calculation;
 import com.dialexa.javawithjava.datapersistence.datapersistencedemo.model.repository.CalculationDAO;
@@ -21,7 +21,7 @@ public class CalculatorService {
     @Autowired
     private CalculationDAO calculationDAO;
 
-    public CalculationResponseDTO divideIntNumbers(NumbersDTO numbers) {
+    public CalculationDTO divideIntNumbers(NumbersDTO numbers) {
         log.info(String.format("Attempting to divide %s by %s", numbers.getA(), numbers.getB()));
         int result = numbers.getA() / numbers.getB();
         Calculation calculation = Calculation.builder()
@@ -35,13 +35,13 @@ public class CalculatorService {
         return calculation.toDTO();
     }
 
-    public List<CalculationResponseDTO> getAllCalculations() {
-        List<CalculationResponseDTO> calculationResponseDTOs = new ArrayList<CalculationResponseDTO>();
+    public List<CalculationDTO> getAllCalculations() {
+        List<CalculationDTO> calculationDTOS = new ArrayList<CalculationDTO>();
         List<Calculation> calculations = calculationDAO.findAll();
         calculations.forEach((calculation) -> {
-            calculationResponseDTOs.add(calculation.toDTO());
+            calculationDTOS.add(calculation.toDTO());
         });
-        return calculationResponseDTOs;
+        return calculationDTOS;
     }
 
 }
