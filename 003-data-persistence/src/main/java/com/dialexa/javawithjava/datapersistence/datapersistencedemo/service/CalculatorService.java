@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Slf4j
@@ -89,6 +90,16 @@ public class CalculatorService {
             calculationDTOS.add(calculation.toDTO());
         });
         return calculationDTOS;
+    }
+
+    public void deleteCalculationById(String id) {
+        try {
+            log.info(String.format("Attempting to delete calculation with ID %s", id));
+            calculationDAO.deleteById(UUID.fromString(id));
+        } catch (Exception ex) {
+            log.error(String.format("An error occurred: %s", ex));
+            throw ex;
+        }
     }
 
 }
