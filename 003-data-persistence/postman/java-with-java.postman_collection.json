@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "866919b5-71e8-44c3-b56d-ea3fd8e5e71b",
+		"name": "java-with-java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Divide Ints",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"a\": -12,\n    \"b\": -4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/calculator/divideints",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"calculator",
+						"divideints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Ints",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"a\": 5,\n    \"b\": 245\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/calculator/addints",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"calculator",
+						"addints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Calculation by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/calculator/calculations/delete/c6420188-6914-4b83-9ef0-3ab4fa053c05",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"calculator",
+						"calculations",
+						"delete",
+						"c6420188-6914-4b83-9ef0-3ab4fa053c05"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Calculations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/calculator/calculations",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"calculator",
+						"calculations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Positive Calculations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/calculator/calculations/positive",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"calculator",
+						"calculations",
+						"positive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Negative Calculations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/calculator/calculations/negative",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"calculator",
+						"calculations",
+						"negative"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Addition Calculations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/calculator/calculations/addition",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"calculator",
+						"calculations",
+						"addition"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Division Calculations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/calculator/calculations/division",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"calculator",
+						"calculations",
+						"division"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
